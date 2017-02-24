@@ -1,0 +1,24 @@
+Wed Feb 15 17:22:43 PST 2017
+Executing: python /frazer01/home/joreyna/repos/CSE-280a/Assignment_3/Generate_HAF_Scores.py 1 0 0.1
+Error: Unable to access jarfile /frazer01/home/joreyna/shared_drive/CSE-280a/Assignment_2/msms/lib/msms.jar
+Traceback (most recent call last):
+  File "/frazer01/home/joreyna/repos/CSE-280a/Assignment_3/Generate_HAF_Scores.py", line 135, in <module>
+    freq = freq)
+  File "/frazer01/home/joreyna/repos/CSE-280a/Assignment_3/Generate_HAF_Scores.py", line 51, in generate_dataset
+    return subprocess.check_call(cmd, shell=True)
+  File "/frazer01/home/joreyna/anaconda2/envs/hla/lib/python2.7/subprocess.py", line 540, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'java -jar /frazer01/home/joreyna/shared_drive/CSE-280a/Assignment_2/msms/lib/msms.jar -ms 200 100 -r 250 -t 250 -N 10000 -SAa 2000.0 -SAA 4000.0 -SF 2.5e-05 0 -Sp 0.50000 -Smark -threads 4 -l 1 1 1000000000 1> /frazer01/home/joreyna/repos/CSE-280a/Assignment_3/timepoint_1.txt' returned non-zero exit status 1
+Wed Feb 15 17:22:46 PST 2017
+Wed Feb 15 17:26:29 PST 2017
+Executing: python /frazer01/home/joreyna/repos/CSE-280a/Assignment_3/Generate_HAF_Scores.py 1 0 0.1
+Error: Unable to access jarfile /frazer01/home/joreyna/shared_drive/CSE-280a/Assignment_2/msms/lib/msms.jar
+Traceback (most recent call last):
+  File "/frazer01/home/joreyna/repos/CSE-280a/Assignment_3/Generate_HAF_Scores.py", line 135, in <module>
+    freq = freq)
+  File "/frazer01/home/joreyna/repos/CSE-280a/Assignment_3/Generate_HAF_Scores.py", line 51, in generate_dataset
+    return subprocess.check_call(cmd, shell=True)
+  File "/frazer01/home/joreyna/anaconda2/envs/hla/lib/python2.7/subprocess.py", line 540, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'java -jar /frazer01/home/joreyna/shared_drive/CSE-280a/Assignment_2/msms/lib/msms.jar -ms 200 100 -r 250 -t 250 -N 10000 -SAa 2000.0 -SAA 4000.0 -SF 2.5e-05 0 -Sp 0.50000 -Smark -threads 4 1> /frazer01/home/joreyna/repos/CSE-280a/Assignment_3/timepoint_1.txt' returned non-zero exit status 1
+Wed Feb 15 17:26:32 PST 2017

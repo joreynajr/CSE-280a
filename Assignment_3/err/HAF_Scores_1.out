@@ -1,0 +1,2 @@
+cmd: java -jar /frazer01/home/joreyna/shared_drive/CSE-280a/Assignment_2/msms/lib/msms.jar -ms 200 100 -r 250 -t 250 -N 10000 -SAa 2000.0 -SAA 4000.0 -SF 2.5e-05 0 -Sp 0.50000 -Smark -threads 4 -l 1 1 1000000000 1> /frazer01/home/joreyna/repos/CSE-280a/Assignment_3/timepoint_1.txt
+cmd: java -jar /frazer01/home/joreyna/shared_drive/CSE-280a/Assignment_2/msms/lib/msms.jar -ms 200 100 -r 250 -t 250 -N 10000 -SAa 2000.0 -SAA 4000.0 -SF 2.5e-05 0 -Sp 0.50000 -Smark -threads 4 1> /frazer01/home/joreyna/repos/CSE-280a/Assignment_3/timepoint_1.txt
