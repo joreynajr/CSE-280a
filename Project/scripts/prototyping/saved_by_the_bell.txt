@@ -1,0 +1,106 @@
+# Phase2_Simulate_Read_Mapping.sh
+# Simulation of 150 bp single ended reads 
+# then mapping to the VNTR specifif reference genome,
+# compressed and the read mappings are finally 
+# intersected with the location of the VNTR's in
+# the reference genome.
+
+# SETTING tool paths 
+art_illumina=/frazer01/home/joreyna/software/art_src_MountRainier_Linux/art_illumina
+samtools='/frazer01/software/samtools-1.2/samtools'
+bwa="/frazer01/software/bwa-0.7.15/bwa"
+bedtools="/frazer01/software/bedtools-2.25.0/bin/bedtools"
+
+
+# SETTING project variables 
+proj_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+proj_dir="$( echo ${proj_dir} | sed s/scripts// )"
+printf "proj_dir: %s\n" "${proj_dir}"
+
+
+# EXTRACTING command line arguments
+case=$1
+seqLen=$2
+
+
+# SETTING case dependent variables 
+sample_name="sequence_${seqLen}_case_${case}"
+sim_ref_file="${proj_dir}/output/build_vntr_sequence/${sample_name}/${sample_name}.fa"
+
+
+# SETTING ART specific variables 
+rlen=150
+fold_coverage=30
+
+
+# BUILDING folder structure
+coverage="coverage_${fold_coverage}"
+sample_prefix="sequence_${seqLen}_case_${case}_${coverage}"
+sample_dir="sequence_${seqLen}_case_${case}/${coverage}"
+out_dir="${proj_dir}/output/simulate_read_mapping/${sample_dir}"
+data_dir="${proj_dir}/output/build_vntr_sequence/${sample_name}/"
+mkdir -p ${out_dir}
+
+
+echo
+# RUNNING ART
+cmd="${art_illumina} -sam -ss HS25 -l ${rlen} -f ${fold_coverage} 
+	-i ${sim_ref_file} 
+	-o ${out_dir}/${sample_prefix} >
+	 ${out_dir}/log.out"
+printf "Evaluating: %s\n" "$cmd"
+eval $cmd
+
+
+echo
+# ALIGNING the SAM file
+ref_fn="${data_dir}/${sample_name}_reference.fa"
+fastq_fn="${proj_dir}/output/simulate_read_mapping/${sample_dir}/${sample_prefix}.fq"
+sam_fn="${out_dir}/${sample_prefix}_bwa.sam"
+cmd="${bwa} mem $ref_fn $fastq_fn -t 4 -a > $sam_fn"
+printf "Evaluating: %s\n" "$cmd"
+eval $cmd
+
+
+echo
+# BAMMING the SAM file
+bam_fn="${out_dir}/${sample_prefix}_bwa.bam"
+cmd="${samtools} view -h -b $sam_fn > $bam_fn"
+printf "Evaluating: %s\n" "$cmd"
+eval $cmd
+
+
+echo 
+# INTERSECTING the BAM file
+bed_fn="/frazer01/home/joreyna/repos/CSE-280a/Project/output/build_vntr_sequence/sequence_${seqLen}_case_${case}/sequence_${seqLen}_case_${case}_reference.bed"
+
+wao_fn="/frazer01/home/joreyna/repos/CSE-280a/Project/output/simulate_read_mapping/sequence_${seqLen}_case_${case}/coverage_${coverage}/sequence_${seqLen}_case_${case}_coverage_${coverage}.wao"
+
+cmd="${bedtools} intersect -wao -bed -a $bam_fn -b $bed_fn > ${wao_fn}"
+date 
+echo "Evaluating: ${cmd}"
+eval $cmd
+date 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

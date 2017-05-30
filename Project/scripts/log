@@ -1,0 +1,168 @@
+
+    ====================ART====================
+             ART_Illumina (2008-2016)          
+          Q Version 2.5.8 (June 6, 2016)       
+     Contact: Weichun Huang <whduke@gmail.com> 
+    -------------------------------------------
+
+                  Single-end Simulation
+
+Total CPU time used: 0.07
+
+The random seed for the run: 1490142724
+
+Parameters used during run
+	Read Length:	150
+	Genome masking 'N' cutoff frequency: 	1 in 150
+	Fold Coverage:            10X
+	Profile Type:             Combined
+	ID Tag:                   
+
+Quality Profile(s)
+	First Read:   HiSeq 2500 Length 150 R1 (built-in profile) 
+
+Output files
+
+  FASTQ Sequence File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.fq
+
+  ALN Alignment File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.aln
+
+  SAM Alignment File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.sam
+
+cmd: /frazer01/home/joreyna/software/art_src_MountRainier_Linux/art_illumina -ss HS25 -sam -i /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.fa -l 150 -f 10 -o /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1
+cmd: bwa mem -t 4 /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_reference.fa /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.fq | samtools view -h -b - > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.bam
+cmd: bedtools intersect -wao -bed -a /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.bam -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_reference.bed > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.wao
+cmd: sambamba sort /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.bam
+cmd: samtools bedcov /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.vntr.cov
+cmd: samtools bedcov /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_non_vntr_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.non_vntr.cov
+cmd: samtools depth -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.vntr.depth
+cmd: samtools depth -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_non_vntr_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_10/sequence_10000_case_1.non_vntr.depth
+
+    ====================ART====================
+             ART_Illumina (2008-2016)          
+          Q Version 2.5.8 (June 6, 2016)       
+     Contact: Weichun Huang <whduke@gmail.com> 
+    -------------------------------------------
+
+                  Single-end Simulation
+
+Total CPU time used: 0.12
+
+The random seed for the run: 1490142729
+
+Parameters used during run
+	Read Length:	150
+	Genome masking 'N' cutoff frequency: 	1 in 150
+	Fold Coverage:            20X
+	Profile Type:             Combined
+	ID Tag:                   
+
+Quality Profile(s)
+	First Read:   HiSeq 2500 Length 150 R1 (built-in profile) 
+
+Output files
+
+  FASTQ Sequence File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.fq
+
+  ALN Alignment File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.aln
+
+  SAM Alignment File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.sam
+
+cmd: /frazer01/home/joreyna/software/art_src_MountRainier_Linux/art_illumina -ss HS25 -sam -i /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.fa -l 150 -f 20 -o /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1
+cmd: bwa mem -t 4 /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_reference.fa /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1.fq | samtools view -h -b - > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.bam
+cmd: bedtools intersect -wao -bed -a /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.bam -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_reference.bed > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.wao
+cmd: sambamba sort /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.bam
+cmd: samtools bedcov /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.vntr.cov
+cmd: samtools bedcov /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_non_vntr_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.non_vntr.cov
+cmd: samtools depth -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.vntr.depth
+cmd: samtools depth -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/sequence_10000_case_1_non_vntr_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_1/coverage_20/sequence_10000_case_1.non_vntr.depth
+
+    ====================ART====================
+             ART_Illumina (2008-2016)          
+          Q Version 2.5.8 (June 6, 2016)       
+     Contact: Weichun Huang <whduke@gmail.com> 
+    -------------------------------------------
+
+                  Single-end Simulation
+
+Total CPU time used: 0.08
+
+The random seed for the run: 1490142736
+
+Parameters used during run
+	Read Length:	150
+	Genome masking 'N' cutoff frequency: 	1 in 150
+	Fold Coverage:            10X
+	Profile Type:             Combined
+	ID Tag:                   
+
+Quality Profile(s)
+	First Read:   HiSeq 2500 Length 150 R1 (built-in profile) 
+
+Output files
+
+  FASTQ Sequence File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.fq
+
+  ALN Alignment File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.aln
+
+  SAM Alignment File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.sam
+
+cmd: /frazer01/home/joreyna/software/art_src_MountRainier_Linux/art_illumina -ss HS25 -sam -i /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.fa -l 150 -f 10 -o /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2
+cmd: bwa mem -t 4 /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_reference.fa /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.fq | samtools view -h -b - > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.bam
+cmd: bedtools intersect -wao -bed -a /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.bam -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_reference.bed > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.wao
+cmd: sambamba sort /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.bam
+cmd: samtools bedcov /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.vntr.cov
+cmd: samtools bedcov /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_non_vntr_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.non_vntr.cov
+cmd: samtools depth -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.vntr.depth
+cmd: samtools depth -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_non_vntr_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_10/sequence_10000_case_2.non_vntr.depth
+
+    ====================ART====================
+             ART_Illumina (2008-2016)          
+          Q Version 2.5.8 (June 6, 2016)       
+     Contact: Weichun Huang <whduke@gmail.com> 
+    -------------------------------------------
+
+                  Single-end Simulation
+
+Total CPU time used: 0.12
+
+The random seed for the run: 1490142742
+
+Parameters used during run
+	Read Length:	150
+	Genome masking 'N' cutoff frequency: 	1 in 150
+	Fold Coverage:            20X
+	Profile Type:             Combined
+	ID Tag:                   
+
+Quality Profile(s)
+	First Read:   HiSeq 2500 Length 150 R1 (built-in profile) 
+
+Output files
+
+  FASTQ Sequence File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.fq
+
+  ALN Alignment File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.aln
+
+  SAM Alignment File:
+	/frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.sam
+
+cmd: /frazer01/home/joreyna/software/art_src_MountRainier_Linux/art_illumina -ss HS25 -sam -i /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.fa -l 150 -f 20 -o /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2
+cmd: bwa mem -t 4 /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_reference.fa /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2.fq | samtools view -h -b - > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.bam
+cmd: bedtools intersect -wao -bed -a /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.bam -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_reference.bed > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.wao
+cmd: sambamba sort /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.bam
+cmd: samtools bedcov /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.vntr.cov
+cmd: samtools bedcov /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_non_vntr_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.non_vntr.cov
+cmd: samtools depth -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.vntr.depth
+cmd: samtools depth -b /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/sequence_10000_case_2_non_vntr_reference.bed /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.sorted.bam > /frazer01/home/joreyna/repos/CSE-280a/Project/output/pipeline/sample/sequence_10000_case_2/coverage_20/sequence_10000_case_2.non_vntr.depth

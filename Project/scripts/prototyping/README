@@ -1,0 +1,28 @@
+Scripts
+-------
+
+Build_VNTR_Sequence.py
+Commandline script to build a fastq file with the VNTR copies present. 
+
+Build_VNTR_Cases.sh
+Generates specific cases of the VNTR sequences for analysis. 
+
+Simulate_Reads_Mapping.sh
+Runs the read simulator ART on the cases made in Build_VNTR_Cases. 
+
+
+Workflow
+-------
+Step 1) Generate a sequence containing a VNTR (Building_VNTR_Sequence.py + Build_VNTR_Cases.sh).
+Step 2) Simulate reads and mapping (Simulate_Read_Mapping.sh). 
+
+
+Data Dependencies
+-----------------
+Step 1 to 2) 
+	case, the case number you need to simulate reads for. 
+	seqLen, the length of the context sequence.
+
+	These two values are needed to construct the path to the input fasta file. 
+	which follows the format: sequence_${seqLen}_case_${case}.fa. 
+
